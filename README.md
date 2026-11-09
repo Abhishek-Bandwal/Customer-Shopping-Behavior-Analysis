@@ -7,15 +7,15 @@ An end-to-end data analytics project exploring customer purchasing patterns, pro
 
 ## Project Overview
 
-Understanding customer shopping behaviour is important for businesses that want to improve customer experience, optimise marketing strategies, and make data-driven decisions.
+Understanding customer shopping behaviour helps businesses improve customer experience, optimise marketing strategies, and make better data-driven decisions.
 
-In this project, I analysed customer shopping transaction data to identify purchasing patterns, understand customer segments, evaluate discount usage, and explore the relationship between customer behaviour and subscription status.
+In this project, I analysed customer shopping transaction data to identify purchasing patterns, understand customer segments, evaluate discount usage, and explore subscription behaviour.
 
-The project combines Python for data cleaning and exploratory analysis, PostgreSQL for querying and analysing business questions, and Power BI for visualising the findings through an interactive dashboard.
+The project combines Python for data cleaning and exploratory data analysis, PostgreSQL for business-focused SQL analysis, and Power BI for presenting insights through an interactive dashboard.
 
 ## Business Objectives
 
-The main objectives of this project were to:
+The main objectives of this project are:
 
 - Analyse revenue distribution across customer demographics.
 - Identify customers who use discounts but still make high-value purchases.
@@ -65,7 +65,7 @@ The dataset contains **3,900 purchase records and 18 columns** covering customer
 
 ## Project Workflow
 
-### 1. Data Loading & Exploratory Data Analysis (Python)
+### 1. Data Loading & Exploratory Data Analysis
 
 The dataset was imported into Python using Pandas. Initial exploration was performed to understand the dataset structure, identify missing values, inspect data types, and examine descriptive statistics.
 
@@ -84,7 +84,7 @@ Data preparation was performed to improve data consistency and make the dataset 
 Key activities:
 
 - Handled missing Review Rating values using the median rating within each product category.
-- Standardised column names into snake_case format.
+- Standardised column names into `snake_case` format.
 - Created an `age_group` column by grouping customers into age categories.
 - Created a `purchase_frequency_days` column by converting purchase-frequency labels into approximate day values.
 - Checked the relationship between `discount_applied` and `promo_code_used`.
@@ -127,13 +127,17 @@ I developed SQL queries to investigate the following business questions:
 
 ### 5. Power BI Dashboard
 
-An interactive dashboard was developed in Power BI to present important customer shopping metrics and analytical findings.
+An interactive dashboard was developed using Power BI to present important customer shopping metrics and analytical findings.
 
-The dashboard helps communicate purchasing patterns, revenue distribution, product preferences, and customer behaviour through visualisations.
+The dashboard provides a consolidated view of customer and purchase behaviour through visualisations.
 
-**Dashboard Preview**
+### Dashboard Preview
 
-![Customer Shopping Behavior Dashboard](dashboard/dashboard_screenshot.png)
+![Customer Shopping Behavior Dashboard](dashboard/Dashboard.png)
+
+**Power BI File:** `dashboard/Customer_Shopping_Behavior_Analysis_PowerBI.pbix`
+
+The interactive dashboard can be opened using Power BI Desktop.
 
 ---
 
@@ -166,30 +170,28 @@ Use demographic and age-group analysis to create more relevant marketing campaig
 ## Repository Structure
 
 ```text
-customer-shopping-behavior-analysis/
+Customer-Shopping-Behavior-Analysis/
 │
 ├── data/
 │   └── customer_shopping_behavior.csv
 │
 ├── notebooks/
-│   └── customer_shopping_behavior_analysis.ipynb
+│   └── Customer_Shopping_Behavior_Analysis.ipynb
 │
 ├── sql/
 │   └── customer_shopping_behavior.sql
 │
 ├── dashboard/
-│   ├── customer_behavior_dashboard.pbix
-│   └── dashboard_screenshot.png
+│   ├── Customer_Shopping_Behavior_Analysis_PowerBI.pbix
+│   └── Dashboard.png
 │
 ├── reports/
 │   └── Customer_Shopping_Behavior_Analysis_Professional_Report_Layout_Fixed.pdf
 │
+├── README.md
 ├── requirements.txt
-├── .gitignore
-└── README.md
+└── .gitignore
 ```
-
-*Note: Include only files that are actually present in your repository. The dataset, Power BI file, and screenshot should be added only if available and permitted for sharing.*
 
 ---
 
@@ -199,22 +201,22 @@ customer-shopping-behavior-analysis/
 
 Make sure you have the following installed:
 
-- Python
+- Python 3.9 or later
 - Jupyter Notebook
 - PostgreSQL
 - pgAdmin or another PostgreSQL client
-- Power BI Desktop (to view the dashboard)
+- Power BI Desktop
 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Abhishek-Bandwal/Customer-Shopping-Behavior-Analysis.git
 ```
 
 Move into the project directory:
 
 ```bash
-cd customer-shopping-behavior-analysis
+cd Customer-Shopping-Behavior-Analysis
 ```
 
 ### Step 2: Install Dependencies
@@ -222,12 +224,12 @@ cd customer-shopping-behavior-analysis
 Install the required Python libraries:
 
 ```bash
-pip install pandas numpy matplotlib seaborn sqlalchemy psycopg2-binary jupyter
+pip install -r requirements.txt
 ```
 
-### Step 3: Add the Dataset
+### Step 3: Configure the Dataset
 
-Place the dataset inside the `data` folder.
+The dataset is available in the `data/` directory.
 
 Expected filename:
 
@@ -235,23 +237,17 @@ Expected filename:
 customer_shopping_behavior.csv
 ```
 
-If the dataset is not included in the repository, obtain it from its original source and place it in the specified folder. Check the dataset licence before redistributing it.
-
 ### Step 4: Run the Jupyter Notebook
 
-Open the notebook:
+Open Jupyter Notebook:
 
 ```bash
 jupyter notebook
 ```
 
-Navigate to:
+Navigate to the `notebooks/` directory and open the analysis notebook.
 
-```text
-notebooks/customer_shopping_behavior_analysis.ipynb
-```
-
-Run the notebook cells in sequence to perform data loading, cleaning, exploratory analysis, feature engineering, and database integration.
+Run the cells in sequence to perform data loading, cleaning, exploratory analysis, feature engineering, and database integration.
 
 ### Step 5: Connect to PostgreSQL
 
@@ -261,21 +257,17 @@ Use environment variables for database credentials. Do not store passwords direc
 
 ### Step 6: Execute SQL Queries
 
-Open the SQL file:
+Open the SQL file inside the `sql/` directory.
 
-```text
-sql/customer_shopping_behavior.sql
-```
+Connect to your PostgreSQL database and execute the queries to reproduce the business analysis.
 
-Connect to the PostgreSQL database and execute the queries to reproduce the business analysis.
+### Step 7: View the Power BI Dashboard
 
-### Step 7: View the Dashboard
+Open the following file using Power BI Desktop:
 
-Open the Power BI file in Power BI Desktop:
+`dashboard/Customer_Shopping_Behavior_Analysis_PowerBI.pbix`
 
-```text
-dashboard/customer_behavior_dashboard.pbix
-```
+Explore the dashboard to review customer shopping metrics and analytical findings.
 
 ---
 
