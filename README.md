@@ -32,7 +32,7 @@ The main objectives of this project are:
 
 ## Dataset Overview
 
-The dataset contains **3,900 purchase records and 18 columns** covering customer demographics, product information, and shopping behaviour.
+The dataset contains **3,900 purchase records and 18 columns**, covering customer demographics, product information, and shopping behaviour.
 
 | Category | Information |
 |---|---|
@@ -135,7 +135,7 @@ The dashboard provides a consolidated view of customer and purchase behaviour th
 
 ![Customer Shopping Behavior Dashboard](dashboard/Dashboard.png)
 
-**Power BI File:** `dashboard/Customer_Shopping_Behavior_Analysis_PowerBI.pbix`
+**Power BI File:** [Customer Shopping Behavior Dashboard](dashboard/Customer_Shopping_Behavior_Analysis_PowerBI.pbix)
 
 The interactive dashboard can be opened using Power BI Desktop.
 
@@ -172,25 +172,23 @@ Use demographic and age-group analysis to create more relevant marketing campaig
 ```text
 Customer-Shopping-Behavior-Analysis/
 │
+├── dashboard/
+│   ├── Customer_Shopping_Behavior_Analysis_PowerBI.pbix
+│   └── Dashboard.png
+│
 ├── data/
 │   └── customer_shopping_behavior.csv
 │
 ├── notebooks/
 │   └── Customer_Shopping_Behavior_Analysis.ipynb
 │
-├── sql/
-│   └── customer_shopping_behavior.sql
-│
-├── dashboard/
-│   ├── Customer_Shopping_Behavior_Analysis_PowerBI.pbix
-│   └── Dashboard.png
-│
 ├── reports/
-│   └── Customer_Shopping_Behavior_Analysis_Professional_Report_Layout_Fixed.pdf
+│   └── Customer_Shopping_Behavior_Analysis_Report.pdf
 │
-├── README.md
-├── requirements.txt
-└── .gitignore
+├── sql/
+│   └── Customer_Shopping_Behavior_Analysis.sql
+│
+└── README.md
 ```
 
 ---
@@ -219,19 +217,19 @@ Move into the project directory:
 cd Customer-Shopping-Behavior-Analysis
 ```
 
-### Step 2: Install Dependencies
+### Step 2: Install Python Dependencies
 
-Install the required Python libraries:
+Install the required libraries:
 
 ```bash
-pip install -r requirements.txt
+pip install pandas numpy matplotlib seaborn sqlalchemy psycopg2-binary jupyter
 ```
 
-### Step 3: Configure the Dataset
+### Step 3: Access the Dataset
 
 The dataset is available in the `data/` directory.
 
-Expected filename:
+Filename:
 
 ```text
 customer_shopping_behavior.csv
@@ -239,17 +237,21 @@ customer_shopping_behavior.csv
 
 ### Step 4: Run the Jupyter Notebook
 
-Open Jupyter Notebook:
+Start Jupyter Notebook:
 
 ```bash
 jupyter notebook
 ```
 
-Navigate to the `notebooks/` directory and open the analysis notebook.
+Open the notebook:
+
+```text
+notebooks/Customer_Shopping_Behavior_Analysis.ipynb
+```
 
 Run the cells in sequence to perform data loading, cleaning, exploratory analysis, feature engineering, and database integration.
 
-### Step 5: Connect to PostgreSQL
+### Step 5: Configure PostgreSQL
 
 Create a PostgreSQL database and configure the database connection in the notebook.
 
@@ -257,7 +259,11 @@ Use environment variables for database credentials. Do not store passwords direc
 
 ### Step 6: Execute SQL Queries
 
-Open the SQL file inside the `sql/` directory.
+Open the SQL file:
+
+```text
+sql/Customer_Shopping_Behavior_Analysis.sql
+```
 
 Connect to your PostgreSQL database and execute the queries to reproduce the business analysis.
 
@@ -265,7 +271,9 @@ Connect to your PostgreSQL database and execute the queries to reproduce the bus
 
 Open the following file using Power BI Desktop:
 
-`dashboard/Customer_Shopping_Behavior_Analysis_PowerBI.pbix`
+```text
+dashboard/Customer_Shopping_Behavior_Analysis_PowerBI.pbix
+```
 
 Explore the dashboard to review customer shopping metrics and analytical findings.
 
